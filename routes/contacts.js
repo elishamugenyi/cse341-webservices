@@ -22,8 +22,8 @@ async function connectMongo() {
     }
 }
 
-// Example route to get contacts
-router.get('/contacts', async (req, res) => {
+// Example route to get contacts. removing 'contacts from the next line'
+router.get('/', async (req, res) => {
     let client;
 
     try {

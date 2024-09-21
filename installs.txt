@@ -14,3 +14,10 @@ With this you are almost through. add the .env file to the gitignore file. But f
 #touch .env , touch .gitignore. These commands create files in the root folder.
 oNCE ALL IS SET, THEN RUN YOUR CONNECTION file
 #node connection.js, it should connect and all is good.
+
+Resources.
+https://www.coderrocketfuel.com/article/store-mongodb-credentials-as-environment-variables-in-nodejs
+
+https://www.mongodb.com/blog/post/quick-start-nodejs-mongodb-how-to-get-connected-to-your-database
+
+https://codeforgeek.com/express-nodejs-tutorial/

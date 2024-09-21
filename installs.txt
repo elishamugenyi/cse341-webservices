@@ -1,0 +1,16 @@
+First install npm
+1. #npm init --yy
+Next install express
+2. #npm install --save express
+If you have a file to run after these installs, use node file.js command.
+Next add a connection file to your mongodb
+#file could be named anything.
+Next install mongodb before you run the connection file
+#npm install mongodb
+Use dotenv to remove the sensitive data like connection details
+then install the module before running the file
+#npm install --save dotenv
+With this you are almost through. add the .env file to the gitignore file. But first create the .env file.
+#touch .env , touch .gitignore. These commands create files in the root folder.
+oNCE ALL IS SET, THEN RUN YOUR CONNECTION file
+#node connection.js, it should connect and all is good.

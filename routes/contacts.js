@@ -6,6 +6,67 @@ dotenv.config(); // Load environment variables
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * /contacts:
+ *   get:
+ *     summary: Retrieve a list of contacts
+ *     description: Retrieve a list of contacts from the database.
+ *     responses:
+ *       200:
+ *         description: A list of contacts.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   _id:
+ *                     type: string
+ *                     description: The contact ID.
+ *                     example: "60d1fbbf2e35f45a5c46eb44"
+ *                   firstname:
+ *                     type: string
+ *                     description: The contact's first name.
+ *                     example: "Tony"
+ *                   lastname:
+ *                     type: string
+ *                     description: The contact's last name.
+ *                     example: "Stark"
+ */
+
+/**
+ * @swagger
+ * /contacts:
+ *   post:
+ *     summary: Create a new contact
+ *     description: Create a new contact with the provided information.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               firstname:
+ *                 type: string
+ *                 description: The contact's first name.
+ *               lastname:
+ *                 type: string
+ *                 description: The contact's last name.
+ *               email:
+ *                 type: string
+ *                 description: The contact's email address.
+ *               phone:
+ *                 type: string
+ *                 description: The contact's phone number.
+ *     responses:
+ *       201:
+ *         description: Contact created successfully.
+ */
+
+
 // MongoDB connection URI using environment variables
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.vgbfw.mongodb.net/`;
 
@@ -75,6 +136,48 @@ router.post('/', async (req, res) => {
   }
 });
 
+/**
+ * @swagger
+ * /contacts/{id}:
+ *   put:
+ *     summary: Update an existing contact
+ *     description: Update an existing contact's information based on the provided contact ID.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: The ID of the contact to update.
+ *         schema:
+ *           type: string
+ *           example: "60d1fbbf2e35f45a5c46eb44"
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               firstname:
+ *                 type: string
+ *                 description: The updated first name of the contact.
+ *                 example: "Clark"
+ *               lastname:
+ *                 type: string
+ *                 description: The updated last name of the contact.
+ *                 example: "Kent"
+ *               email:
+ *                 type: string
+ *                 description: The updated email address of the contact.
+ *                 example: "clark.kent@dailyplanet.com"
+ *               phone:
+ *                 type: string
+ *                 description: The updated phone number of the contact.
+ *                 example: "+1-987-654-3210"
+ *     responses:
+ *       200:
+ *         description: Contact updated successfully.
+ */
+
 // PUT: Update an existing contact by ID
 router.put('/:id', async (req, res) => {
   let client;
@@ -118,6 +221,25 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+/**
+ * @swagger
+ * /contacts/{id}:
+ *   delete:
+ *     summary: Delete a contact
+ *     description: Delete an existing contact based on the provided contact ID.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: The ID of the contact to delete.
+ *         schema:
+ *           type: string
+ *           example: "60d1fbbf2e35f45a5c46eb44"
+ *     responses:
+ *       200:
+ *         description: Contact deleted successfully.
+ */
+
 // DELETE: Remove a contact by ID
 router.delete('/:id', async (req, res) => {
   let client;
@@ -147,3 +269,4 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
+

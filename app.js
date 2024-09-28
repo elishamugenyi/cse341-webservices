@@ -1,12 +1,15 @@
 const express = require('express');
 const app = express();
 const contactsRoute = require('./routes/contacts');
+const { swaggerUi, swaggerSpec } = require('./src/swagger'); //integrate swagger
 
 //middleware to parse JSON
 app.use(express.json());
 
 //use the contacts routes
 app.use('/contacts', contactsRoute);
+//serve the swagger docs at the /api-docs endpoint
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 //set up the server
 //app.get('/', (req, res) => {

@@ -1,0 +1,34 @@
+### Test GET /contacts
+GET http://localhost:3000/contacts
+Content-Type: application/json
+
+### Test POST /contacts (if you have a POST route)
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+  "firstname": "John",
+  "lastname": "Wick",
+  "email": "john.wick@example.com",
+  "favoriteColor": "Black",
+  "birthday": "1990-04-11"
+}
+
+### PUT: Update an existing contact
+PUT http://localhost:3000/contacts/66f814acaae2054da5cd6f62
+Content-Type: application/json
+
+{
+  "firstname": "Grim",
+  "lastname": "Reaper",
+  "email": "notjohn.wick@runaway.com",
+  "favoriteColor": "Anything but John's favorite",
+  "birthday": "1984-01-12"
+}
+
+### DELETE: Remove a contact
+DELETE http://localhost:3000/contacts/66f814aeaae2054da5cd6f63
+
+
+### Test GET specific contact (if applicable)
+GET http://localhost:3000/contacts/66ef24de12a1c83b5856c46e

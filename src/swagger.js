@@ -13,7 +13,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: 'https://your-deployment-url.com', // Replace with your deployed URL (this should be render.com but i cannot create another web service on Render)
+      url: 'https://git.heroku.com/cse341-web-services.git', // Replace with your deployed URL (this should be render.com but i cannot create another web service on Render, so i created one at Heroku)
       description: 'Production server',
     },
     {

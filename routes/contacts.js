@@ -58,9 +58,9 @@ const router = express.Router();
  *               email:
  *                 type: string
  *                 description: The contact's email address.
- *               phone:
+ *               favoriteColor:
  *                 type: string
- *                 description: The contact's phone number.
+ *                 description: The contact's favorite color.
  *     responses:
  *       201:
  *         description: Contact created successfully.
@@ -149,7 +149,7 @@ router.post('/', async (req, res) => {
  *         description: The ID of the contact to update.
  *         schema:
  *           type: string
- *           example: "60d1fbbf2e35f45a5c46eb44"
+ *           example: "66f814aeaae2054da5cd6f63"
  *     requestBody:
  *       required: true
  *       content:
@@ -169,10 +169,10 @@ router.post('/', async (req, res) => {
  *                 type: string
  *                 description: The updated email address of the contact.
  *                 example: "clark.kent@dailyplanet.com"
- *               phone:
+ *               favoriteColor:
  *                 type: string
- *                 description: The updated phone number of the contact.
- *                 example: "+1-987-654-3210"
+ *                 description: The updated favorite color of the contact.
+ *                 example: "Beige"
  *     responses:
  *       200:
  *         description: Contact updated successfully.

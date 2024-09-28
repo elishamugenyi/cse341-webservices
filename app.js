@@ -11,7 +11,7 @@ app.use('/contacts', contactsRoute);
 //serve the swagger docs at the /api-docs endpoint
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-//set up the server
+//set up the hosting at heroku, but still in check, not working as it should
 app.get('/', (req, res) => {
   res.send("Available routes: /contacts, /api-docs");
 });

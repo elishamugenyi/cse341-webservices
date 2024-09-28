@@ -12,10 +12,10 @@ const swaggerDefinition = {
     description: 'API Documentation for the Contacts Management System', // Short description of your API
   },
   servers: [
-    {
-      url: 'https://git.heroku.com/cse341-web-services.git', // Replace with your deployed URL (this should be render.com but i cannot create another web service on Render, so i created one at Heroku)
+    /*{
+      url: 'https://git.heroku.com/cse341-web-services.git', // Replace with your deployed URL (this should be render.com but i cannot create another web service on Render, heroku is still not picking up well, so i will comment it out.)
       description: 'Production server',
-    },
+    },*/
     {
       url: 'http://localhost:3000', // Local development server for testing purposes
       description: 'Development server',

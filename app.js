@@ -12,9 +12,9 @@ app.use('/contacts', contactsRoute);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 //set up the server
-//app.get('/', (req, res) => {
-//  res.send("Hello, welcome to the first API");
-//});
+app.get('/', (req, res) => {
+  res.send("Available routes: /contacts, /api-docs");
+});
  
 app.listen(process.env.PORT || 3000, () => {
   console.log('Web Server is listening at port ' + (process.env.PORT || 3000));
